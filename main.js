@@ -125,7 +125,12 @@ window.addEventListener("keypress", (e) => {
   } else {
     mistake.innerText = mistakesNumber += 1;
     totalKeyPresses += 1;
-  }
+    const textLetter = text.innerText.split("");
+    textLetter[i] = `<span class="error">${textLetter[i]}</span>`
+    text.innerHTML = textLetter.join("");
+  
+    };
+
   if (i == text.innerText.length) {
     return symbolInMin.innerText = updateCPM();
   }
