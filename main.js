@@ -41,14 +41,14 @@ startTyping();
 
 const textLetter = text.innerText.split("");
 document.addEventListener('keydown', (e) => {
-
+  
   
   if(e.code == 'Backspace'){
     i--
     const textLetter = text.innerText.split("");
     textLetter[i] = `<span class='selected'>${textLetter[i]}</span>`;
     text.innerHTML = textLetter.join("");
-    
+    backspace.classList.add('selected')
       }
       if(i < 0) {
 
@@ -59,15 +59,11 @@ document.addEventListener('keydown', (e) => {
 
       }
 
-      console.log(textLetter);
-      console.log(i);
-
-
-      backspace.classList.add('selected')
+    
 
 })
 
-document.addEventListener('keyup', () => {
+document.addEventListener('keyup', (e) => {
 
 backspace.classList.remove('selected')
 
@@ -148,4 +144,3 @@ window.addEventListener("keypress", (e) => {
   console.log(i);
 });
 
-// <span class="selected">${textLetter[i]}</span>
